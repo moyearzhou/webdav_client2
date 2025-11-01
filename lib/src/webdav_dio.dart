@@ -461,8 +461,13 @@ class WdDio with DioMixin implements Dio {
       throw newResponseError(pResp);
     }
 
-    // mkdir
-    await this._createParent(self, path, cancelToken: cancelToken);
+    try {
+      // mkdir
+      await this._createParent(self, path, cancelToken: cancelToken);
+    } catch (e) {
+      // 创建文件夹失败，先忽略。主要为了解决坚果云的问题
+      print("Fail to mkdir: " + e.toString());
+    }
 
     var resp = await this.req(
       self,
