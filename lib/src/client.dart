@@ -214,6 +214,25 @@ class Client {
           cancelToken: cancelToken,
         );
   }
+
+  /// Is a file exist
+  /// Note: path can be a full http link, e.g. https://dav.jianguoyun.com/dav/zotero/RADL7ZE4_NEW.zip
+  Future<bool> isExists(
+      String path, {
+        CancelToken? cancelToken,
+      }) async {
+    // 使用 HEAD 请求检查文件是否存在
+    // req 方法已经处理了重定向逻辑（301/302）和认证逻辑（401）
+    var resp = await this.c.req(
+      this,
+      'HEAD',
+      path,
+      cancelToken: cancelToken,
+    );
+    
+    // 200 表示文件存在，404 表示文件不存在
+    return resp.statusCode == 200;
+  }
 }
 
 /// create new client
