@@ -444,6 +444,9 @@ class WdDio with DioMixin implements Dio {
         }
       });
     }
+    // Preserve the released stream-cancellation behavior during hosted migration.
+    // Dio 5.x exposes this helper as internal; replacing it needs separate validation.
+    // ignore: invalid_use_of_internal_member
     await DioMixin.listenCancelForAsyncTask(cancelToken, future);
   }
 

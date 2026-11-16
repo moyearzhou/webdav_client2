@@ -1,8 +1,10 @@
 name: webdav_client
 description: A simple WebDAV client that supports some common methods.
 
-version: 1.2.2
-homepage: https://github.com/flymzero/webdav_client
+version: 1.2.3
+publish_to: https://pub.zotpaper.cn
+homepage: https://github.com/moyearzhou/webdav_client2
+repository: https://github.com/moyearzhou/webdav_client2
 
 environment:
   sdk: '>=2.12.0 <4.0.0'

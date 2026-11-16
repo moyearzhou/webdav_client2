@@ -1,0 +1,15 @@
+.githooks/
+.github/
+.metadata
+.dart_tool/
+build/
+coverage/
+example/
+images/
+test/
+pubspec.lock
+pubspec_overrides.yaml
+*.iml
+.idea/
+.vscode/
+.DS_Store
