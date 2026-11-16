@@ -2,7 +2,28 @@
 
 A dart WebDAV client library(`support null-safety`), **use [dio](https://github.com/flutterchina/dio) as http client**.
 
-pub.dev [link](https://pub.dev/packages/webdav_client)
+This repository is the ZotPaper fork of [flymzero/webdav_client](https://github.com/flymzero/webdav_client), distributed through the private ZotPaper pub registry under the original BSD 3-Clause [license](LICENSE).
+
+## ZotPaper installation
+
+Configure your registry token once (enter it at the prompt):
+
+```sh
+dart pub token add https://pub.zotpaper.cn
+```
+
+Use an explicit hosted source so the ZotPaper fork is selected:
+
+```yaml
+dependencies:
+  webdav_client:
+    hosted: https://pub.zotpaper.cn
+    version: ^1.2.3
+```
+
+Version `1.2.3` preserves the runtime code from Git tag `v-0.1.1`: `isExists()` via HEAD, 301/302 redirects, and byte-upload compatibility when a server rejects parent-directory creation. The package version is independent of ZotPaper app versions; its Git tag is `v-1.2.3`.
+
+Run `dart test` for the local HTTP regression suite; no external WebDAV server or credentials are needed.
 
 ## Main features
 

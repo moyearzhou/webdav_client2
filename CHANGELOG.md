@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.2.3]
+- Publish the ZotPaper fork to `https://pub.zotpaper.cn`.
+- Preserve the `v-0.1.1` runtime baseline: HEAD-based existence checks, 301/302 redirects, and byte uploads when parent-directory creation is rejected.
+- Replace manual remote-server tests with local HTTP regression tests.
+- Retain the upstream BSD 3-Clause license.
+
 ### [1.2.2]
 - 302 redirect: redirect to the real link. Thanks [@cmlanche](https://github.com/flymzero/webdav_client/pull/46)
 
